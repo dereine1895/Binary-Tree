@@ -1,22 +1,23 @@
+
 import utils.*;
 
 public class Ahnenbaum {
     private BinaryTree<Ahne> GohansAhnenbaum;
 
     public Ahnenbaum(){
-        BinaryTree<Ahne> b1 = new BinaryTree<>(new Ahne("Opa","Rinderteufel","M"));
-        BinaryTree<Ahne> b2 = new BinaryTree<>(new Ahne("Oma","Unbekannt","W"));
-        BinaryTree<Ahne> b3 = new BinaryTree<>(new Ahne("Chi", "Chi","W"),b1,b2);
-        BinaryTree<Ahne> b4 = new BinaryTree<>(new Ahne("Oma","Gine","W"));
-        BinaryTree<Ahne> b5 = new BinaryTree<>(new Ahne("Opa","Bardock","M"));
-        BinaryTree<Ahne> b6 = new BinaryTree<>(new Ahne("Son", "Goku","M"),b4,b5);
-        GohansAhnenbaum = new BinaryTree<>(new Ahne("Son", "Gohan","M"),b3,b6);
+        BinaryTree<Ahne> b1 = new BinaryTree<>(new Ahne("Rinderteufel","Opa",'M'));
+        BinaryTree<Ahne> b2 = new BinaryTree<>(new Ahne("Unbekannt","Oma",'W'));
+        BinaryTree<Ahne> b3 = new BinaryTree<>(new Ahne("ChiChi", "Unbekannt",'W'),b1,b2);
+        BinaryTree<Ahne> b4 = new BinaryTree<>(new Ahne("Gine","Oma",'W'));
+        BinaryTree<Ahne> b5 = new BinaryTree<>(new Ahne("Bardock","Opa",'M'));
+        BinaryTree<Ahne> b6 = new BinaryTree<>(new Ahne( "Goku","Son",'M'),b4,b5);
+        GohansAhnenbaum = new BinaryTree<>(new Ahne( "Gohan","Son",'M'),b3,b6);
     }
 
     public void PreSearchAusgabe(){
         PreSearch(GohansAhnenbaum);
     }
-   public void PreSearch(BinaryTree<Ahne> pBinaryTree){
+   private void PreSearch(BinaryTree<Ahne> pBinaryTree){
         if(!pBinaryTree.isEmpty()){
             System.out.println(pBinaryTree.getContent().getVorname());
         }
@@ -34,7 +35,7 @@ public class Ahnenbaum {
         PostSearch(GohansAhnenbaum);
    }
 
-   public void PostSearch(BinaryTree<Ahne> pBinaryTree){
+   private void PostSearch(BinaryTree<Ahne> pBinaryTree){
        if(!pBinaryTree.getLeftTree().isEmpty()){
            PreSearch(pBinaryTree.getLeftTree());
        }
@@ -52,7 +53,7 @@ public class Ahnenbaum {
        InSearch(GohansAhnenbaum);
     }
 
-    public void InSearch(BinaryTree<Ahne> pBinaryTree){
+    private void InSearch(BinaryTree<Ahne> pBinaryTree){
         if(!pBinaryTree.getLeftTree().isEmpty()){
             PreSearch(pBinaryTree.getLeftTree());
         }

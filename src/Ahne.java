@@ -3,7 +3,7 @@ public class Ahne {
     private String nachname;
     private char geschlecht;
 
-    public void Ahne(String pVN, String pNN, char pG){
+    public Ahne(String pVN, String pNN, char pG){
        nachname = pNN;
        vorname = pVN;
        geschlecht = pG;

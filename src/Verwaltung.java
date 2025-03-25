@@ -14,11 +14,11 @@ public class Verwaltung {
 
         Ahnenbaum Gohan= new Ahnenbaum();
         System.out.println("PreOrder Traversierung:");
-        Gohan.PreSearch();
+        Gohan.PreSearchAusgabe();
         System.out.println("InOrder Traversierung:");
-        Gohan.InSearch();
+        Gohan.InSearchAusgabe();
         System.out.println("PostOrder Traversierung:");
-        Gohan.PostSearch();
+        Gohan.PostSearchAusgabe();
 
     }
 
